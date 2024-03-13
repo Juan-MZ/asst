@@ -1,16 +1,15 @@
-package co.unicauca.asst.capaAccesoDatos.models;
-
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+package co.unicauca.asst.fachadaServices.DTO;
 
 import java.util.Date;
 import java.util.List;
 
+import lombok.*;
+
+@Data
 @Getter
 @Setter
 @AllArgsConstructor
-public class EvaluationEntity {
+public class EvaluationDTO {
     private Integer evaluationSec;
     private String city;
     private String gender;
@@ -20,9 +19,8 @@ public class EvaluationEntity {
     private String studyLevel;
     private String occupation;
     private List<String> questions;
-    private PersonEntity person;
 
-    public EvaluationEntity() {
+    EvaluationDTO() {
 
     }
 }

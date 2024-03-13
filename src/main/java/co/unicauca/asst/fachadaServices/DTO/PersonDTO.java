@@ -1,5 +1,8 @@
 package co.unicauca.asst.fachadaServices.DTO;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -14,8 +17,9 @@ public class PersonDTO {
     private String civilStatus;
     private String studyLevel;
     private String occupation;
+    private List<EvaluationDTO> Evaluations;
 
-    PersonDTO(){
-
+    PersonDTO() {
+        this.Evaluations = new ArrayList<>();
     }
 }

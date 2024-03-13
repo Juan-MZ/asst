@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/api")
@@ -34,7 +33,7 @@ public class PersonRestController {
         return objPerson;
     }
 
-    @PutMapping("/people/{cedula}")
+    @PutMapping("/people/update/{cedula}")
     public PersonDTO update(@RequestBody PersonDTO cliente, @PathVariable String cedula) {
         PersonDTO objPerson = null;
         PersonDTO personActual = personService.findByCedula(cedula);
@@ -44,8 +43,8 @@ public class PersonRestController {
         return objPerson;
     }
 
-    @DeleteMapping("/people/delete/{cedula}")
-    public Boolean delete(@PathVariable String cedula) {
+    @DeleteMapping("/people/delete")
+    public Boolean delete(@RequestParam String cedula) {
         Boolean bandera = false;
         PersonDTO personActual = personService.findByCedula(cedula);
         if (personActual != null) {
